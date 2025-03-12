@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "adafruit-io": "^3.1.0",
+    "axios": "^1.8.1",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "mqtt": "^5.10.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
