@@ -1,11 +1,9 @@
-/* Reset CSS để tránh lỗi layout */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Căn giữa form login chính xác */
 body, html {
   width: 100vw;
   height: 100vh;
@@ -15,7 +13,6 @@ body, html {
   align-items: center;
 }
 
-/* Hình nền full màn hình */
 .bg-cover {
   width: 100vw;
   height: 100vh;
@@ -24,17 +21,15 @@ body, html {
   background-repeat: no-repeat;
 }
 
-/* Form login */
 .card-login {
   background-color: white;
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 400px; /* Form sẽ không quá rộng */
+  max-width: 400px; 
 }
 
-/* Input style */
 .card-login input {
   padding: 0.75rem;
   margin-bottom: 1rem;
@@ -43,7 +38,6 @@ body, html {
   border: 1px solid #ccc;
 }
 
-/* Button style */
 .card-login button {
   background-color: #f6a5c0;
   color: white;
@@ -58,9 +52,8 @@ body, html {
   background-color: #e91e63;
 }
 
-/* Responsive: Điều chỉnh form trên màn hình nhỏ */
 @media (max-width: 768px) {
   .card-login {
-    width: 90%; /* Giảm kích thước form trên màn hình nhỏ */
+    width: 90%; 
   }
 }
