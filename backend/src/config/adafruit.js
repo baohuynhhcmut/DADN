@@ -1,8 +1,8 @@
 const mqtt = require('mqtt');
 
-const AIO_USERNAME = 'baohuynh2201';
-const AIO_KEY = 'aio_oLFB47Hm1AArrhr9Mi3h8WHyCKKF';
-const FEED_NAME = 'cambien1';
+const AIO_USERNAME = 'khanhtruong';
+const AIO_KEY = 'aio_Ugps08cqAHkg71u8xqkDEiBS5RHR';
+const FEED_NAME = 'V1';
 
 const MQTT_BROKER = `mqtts://${AIO_USERNAME}:${AIO_KEY}@io.adafruit.com`;
 
