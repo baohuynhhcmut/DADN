@@ -19,7 +19,7 @@ const GetWeather = async(req, res) => {
             const state = exitUser.address.state
 
             if (!state) {
-                return res.status(400).json({ message: "User does not have coordinates!" });
+                return res.status(400).json({ message: "User does not have state!" });
             }
     
             // Gọi API thời tiết
@@ -31,6 +31,7 @@ const GetWeather = async(req, res) => {
     
             // Lọc dữ liệu cần thiết
             const result = {
+                location: exitUser.address.state,
                 temp_c: weatherData.current.temp_c,
                 is_day: weatherData.current.is_day,
                 main_weather: weatherData.current.condition.text,
