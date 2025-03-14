@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import background from "../assets/background.jpg"; // Import ảnh nền
-
+import background from "../../assets/background.jpg"; // Import ảnh nền
+import "./Login.css"
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
