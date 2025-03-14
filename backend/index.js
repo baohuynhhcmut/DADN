@@ -7,6 +7,7 @@ require("./src/config/adafruit")
 var setUpSocket = require("./src/socket_io/socket")
 const http = require("http");
 const LedSocket = require("./src/socket_io/led.socket")
+require('dotenv').config(); // Load biến môi trường từ .env
 
 
 app.use(cors())
@@ -23,7 +24,7 @@ ConnectDatabase()
 // Create app route for fetching API
 Route(app)
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8081
 
 
 
