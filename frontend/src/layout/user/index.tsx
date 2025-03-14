@@ -1,16 +1,15 @@
+import Header from "../../components/Header"
 import Sidebar from "../../components/Sidebar"
 import { Outlet } from "react-router-dom"
 
 const LayoutUser = () => {
   return (
     <div className="flex flex-col h-screen">
-        <div className="w-full h-16 bg-red-500">
-
-        </div>
-        <div className="h-full flex flex-row ">
+        <Header />
+        <div className="h-full flex flex-row">
             <Sidebar />
-            <div className="w-full bg-blue-300">
-
+            <div className="w-full p-10! bg-[#FEF4FF] h-full">
+                <Outlet />
             </div>
         </div>
     </div>

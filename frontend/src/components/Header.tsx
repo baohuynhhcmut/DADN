@@ -39,7 +39,8 @@ const styles = {
     alignItems: 'center',
     padding: '10px 20px',
     backgroundColor: '#fff',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    // border: "1px"
+    // boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
   title: {
     color: '#F3569B',

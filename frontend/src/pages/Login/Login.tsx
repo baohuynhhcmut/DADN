@@ -19,7 +19,7 @@ const Login: React.FC = () => {
       }}
     >
       <div className="card-login">
-        <h2 className="text-2xl font-bold text-gray-800 text-center">WELCOME BACK</h2>
+        <h2 className="text-2xl font-bold text-gray-800 text-center">WELCOME </h2>
         <h3 className="text-lg font-semibold text-center mt-2">Log In to your Account</h3>
         <div className="mt-6 space-y-4">
           <input

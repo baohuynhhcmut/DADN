@@ -36,8 +36,6 @@ const Home = () => {
                   </li>
               ))}
           </ul> */}
-          <button onClick={() => handleLed("1")}>Open led</button>
-          <button onClick={() => handleLed("2")}>Turn of led</button>
       </div>
   )
 }
