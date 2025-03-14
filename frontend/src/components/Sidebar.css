@@ -23,9 +23,12 @@
     padding-left: 20px;
 }
 
-/* .sidebar-item:hover {
-    background-color: #f0f0f0;
-} */
+.sidebar-item.active {
+    background-color: #F3569B; 
+    color: white; 
+    font-weight: bold;
+    border-radius: 12px;
+}
 
 .sidebar-item:hover {
     background-color: #F3569B; 
@@ -33,3 +36,4 @@
     font-weight: bold;
     border-radius: 12px;
 }
+
