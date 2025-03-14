@@ -13,16 +13,18 @@ const GetWeather = async(req, res) => {
                 return
             }
 
-            const lat = exitUser.address.latitude
-            const lon = exitUser.address.longitude
+            // const lat = exitUser.address.latitude
+            // const lon = exitUser.address.longitude
 
-            if (!lat || !lon) {
+            const state = exitUser.address.state
+
+            if (!state) {
                 return res.status(400).json({ message: "User does not have coordinates!" });
             }
     
             // Gọi API thời tiết
             const apiKey = process.env.WEATHER_API
-            const weatherUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${lat},${lon}&aqi=no`;
+            const weatherUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${state}&aqi=no`;
     
             const response = await axios.get(weatherUrl);
             const weatherData = response.data;
