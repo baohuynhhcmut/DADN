@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login/Login";
 import Home from "../pages/Home/Home";
-import LayoutUser from "../layout/user";
 import Devices from "../pages/Devices";
+import LayoutUser from "../layout/user";
 import Profile from "../pages/Profile";
 
 export const router = createBrowserRouter([
@@ -29,3 +29,5 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+   
+
