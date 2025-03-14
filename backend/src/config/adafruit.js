@@ -1,33 +1,72 @@
 const mqtt = require('mqtt');
 
-const AIO_USERNAME = 'baohuynh2201';
-const AIO_KEY = 'aio_oLFB47Hm1AArrhr9Mi3h8WHyCKKF';
-const FEED_NAME = 'cambien1';
+const AIO_USERNAME = 'khanhtruong';
+const AIO_KEY = 'aio_Ugps08cqAHkg71u8xqkDEiBS5RHR';
+const FEED_NAME = [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V10",
+    "V11"
+];
+
+class Feed {
+    constructor(feed,name,value,type,category,location,user){
+        this.feed = feed
+        this.name = name
+        this.value = value,
+        this.type = type,
+        this.category = category,
+        this.location = location,
+        this.user = user
+    }
+}
 
 const MQTT_BROKER = `mqtts://${AIO_USERNAME}:${AIO_KEY}@io.adafruit.com`;
 
 const client = mqtt.connect(MQTT_BROKER);
 
+
 client.on('connect', () => {
     console.log('Connected to Adafruit IO');
 
     // Đăng ký nhận dữ liệu từ feed
-    client.subscribe(`${AIO_USERNAME}/feeds/${FEED_NAME}`);
-
-    // Gửi dữ liệu lên feed mỗi 5 giây
-    setInterval(() => {
-        let randomValue = 20;
-        console.log(`Sending value: ${randomValue}`);
-
-        client.publish(`${AIO_USERNAME}/feeds/${FEED_NAME}`, randomValue.toString());
-    }, 5000);
+    for(const feed of FEED_NAME){
+        client.subscribe(`${AIO_USERNAME}/feeds/${feed}`);
+    }
 });
 
 client.on('message', (topic, message) => {
-    console.log(`Received message: ${message.toString()} from ${topic}`);
+    const feed = topic.split("/").pop();
+    const messageFromFeed = message.toString()
+    switch (feed) {
+        case "V1":
+            const V1 = new Feed(feed,"Nhiệt độ",messageFromFeed,"temperature_sensor","SENSOR",{ latitude: 10.772112, longitude: 106.657883,},"user2")
+            global.io.emit("mqttData",V1);
+            break;
+        default:
+            break;
+    }
 });
 
 // Xử lý lỗi
 client.on('error', (err) => {
     console.error('Error:', err);
 });
+
+function controlButtonV10(state){
+    client.publish(`${AIO_USERNAME}/feeds/V11`,state,(err)=> {
+        if(!err){
+            console.log(`Sent ${state} to Adafruit IO`);
+        }
+    })
+}
+
+// setTimeout(() => controlButtonV10("1"), 5000);
+// setTimeout(() => controlButtonV10("0"), 10000);
+
+module.exports = {
+    client,
+    controlButtonV10
+}

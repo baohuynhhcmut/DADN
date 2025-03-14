@@ -3,9 +3,19 @@ var cors = require('cors')
 var app = express()
 var ConnectDatabase = require("./src/config/db")
 var Route = require("./src/routes/index")
+require("./src/config/adafruit")
+var setUpSocket = require("./src/socket_io/socket")
+const http = require("http");
+const LedSocket = require("./src/socket_io/led.socket")
+
 
 app.use(cors())
 app.use(express.json())
+
+const server = http.createServer(app);
+setUpSocket(server)
+LedSocket()
+
 
 // Connect to mongodb server
 ConnectDatabase()
@@ -15,6 +25,8 @@ Route(app)
 
 const PORT = process.env.PORT || 8080
 
-app.listen(PORT,() => {
-    console.log(`App listen on port ${PORT}`)
-})
+
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
