@@ -3,6 +3,7 @@ import Login from "../pages/Login/Login";
 import Home from "../pages/Home/Home";
 import Devices from "../pages/Devices";
 import HomePage2 from "../pages/HomePage/HomePage2";
+import History from "../pages/History";
 import LayoutUser from "../layout/user";
 import Profile from "../pages/Profile";
 
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: 'home2',
         element: <HomePage2 /> 
+      },
+      {
+        path: 'history',
+        element: <History/>
       }
     ],
   },
