@@ -1,16 +1,16 @@
-import React from 'react';
-import { FaBell } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { FaBell } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const handleBellClick = () => {
-    navigate('/message');
+    navigate("/message");
   };
 
   const handleUserClick = () => {
-    navigate('/profile');
+    navigate("/profile");
   };
 
   return (
@@ -21,7 +21,11 @@ const Header: React.FC = () => {
           <FaBell />
         </div>
         <div style={styles.user} onClick={handleUserClick}>
-          <img src="https://i.pravatar.cc/30" alt="User Avatar" style={styles.avatar} />
+          <img
+            src="https://i.pravatar.cc/30"
+            alt="User Avatar"
+            style={styles.avatar}
+          />
           <div style={styles.userInfo}>
             <span style={styles.username}>User Name</span>
             <span style={styles.userLabel}>User</span>
@@ -34,53 +38,53 @@ const Header: React.FC = () => {
 
 const styles = {
   header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px 20px',
-    backgroundColor: '#fff',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: "10px 20px",
+    backgroundColor: "#fff",
     // border: "1px"
     // boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
   },
   title: {
-    color: '#F3569B',
-    fontSize: '24px',
-    fontWeight: 'bold',
+    color: "#F3569B",
+    fontSize: "24px",
+    fontWeight: "bold",
   },
   icons: {
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
   },
   bellIcon: {
-    fontSize: '24px',
-    cursor: 'pointer',
-    marginRight: '20px',
-    color: '#808191',
-    display: 'flex',
-    alignItems: 'center',
+    fontSize: "24px",
+    cursor: "pointer",
+    marginRight: "20px",
+    color: "#808191",
+    display: "flex",
+    alignItems: "center",
   },
   user: {
-    display: 'flex',
-    alignItems: 'center',
-    cursor: 'pointer',
+    display: "flex",
+    alignItems: "center",
+    cursor: "pointer",
   },
   avatar: {
-    width: '30px',
-    height: '30px',
-    borderRadius: '50%',
-    marginRight: '10px',
+    width: "30px",
+    height: "30px",
+    borderRadius: "50%",
+    marginRight: "10px",
   },
   userInfo: {
-    display: 'flex',
-    flexDirection: 'column' as 'column',
+    display: "flex",
+    flexDirection: "column" as "column",
   },
   username: {
-    fontSize: '16px',
-    fontWeight: 'bold',
+    fontSize: "16px",
+    fontWeight: "bold",
   },
   userLabel: {
-    fontSize: '12px',
-    color: '#808191',
+    fontSize: "12px",
+    color: "#808191",
   },
 };
 

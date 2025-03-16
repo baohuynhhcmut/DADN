@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import background from "../../assets/background.jpg"; // Import ảnh nền
-import "./Login.css"
+import "./Login.css";
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -19,8 +19,12 @@ const Login: React.FC = () => {
       }}
     >
       <div className="card-login">
-        <h2 className="text-2xl font-bold text-gray-800 text-center">WELCOME </h2>
-        <h3 className="text-lg font-semibold text-center mt-2">Log In to your Account</h3>
+        <h2 className="text-2xl font-bold text-gray-800 text-center">
+          WELCOME{" "}
+        </h2>
+        <h3 className="text-lg font-semibold text-center mt-2">
+          Log In to your Account
+        </h3>
         <div className="mt-6 space-y-4">
           <input
             type="email"
@@ -41,7 +45,9 @@ const Login: React.FC = () => {
               <input type="checkbox" className="accent-pink-500" />
               <span>Remember me</span>
             </label>
-            <a href="#" className="text-pink-500 hover:underline">Forgot Password?</a>
+            <a href="#" className="text-pink-500 hover:underline">
+              Forgot Password?
+            </a>
           </div>
           <button
             onClick={handleLogin}
@@ -51,7 +57,10 @@ const Login: React.FC = () => {
           </button>
         </div>
         <p className="text-center text-sm text-gray-600 mt-4">
-          New User? <a href="#" className="text-pink-500 font-semibold hover:underline">SIGN UP HERE</a>
+          New User?{" "}
+          <a href="#" className="text-pink-500 font-semibold hover:underline">
+            SIGN UP HERE
+          </a>
         </p>
       </div>
     </div>

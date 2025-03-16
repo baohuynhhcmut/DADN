@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip } from "recharts";
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
 import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css"; 
+import "react-calendar/dist/Calendar.css";
 import { FaTemperatureHigh, FaSun, FaTint } from "react-icons/fa";
-import "./HomePage2.css"; 
+import "./HomePage2.css";
 
 type Value = Date | null | [Date | null, Date | null];
 
@@ -24,7 +31,9 @@ const HomePage2 = () => {
           <div className="info-card gray">
             <FaTemperatureHigh className="icon" />
             <div>
-              <p className="info-text">Temperature <strong>30°C</strong></p>
+              <p className="info-text">
+                Temperature <strong>30°C</strong>
+              </p>
               <p className="info-subtext">Today</p>
             </div>
           </div>
@@ -32,7 +41,9 @@ const HomePage2 = () => {
           <div className="info-card blue">
             <FaSun className="icon" />
             <div>
-              <p className="info-text">Light Intensity <strong>15 lux</strong></p>
+              <p className="info-text">
+                Light Intensity <strong>15 lux</strong>
+              </p>
               <p className="info-subtext">Today</p>
             </div>
           </div>
@@ -40,7 +51,9 @@ const HomePage2 = () => {
           <div className="info-card green">
             <FaTint className="icon" />
             <div>
-              <p className="info-text">Humidity <strong>75%</strong></p>
+              <p className="info-text">
+                Humidity <strong>75%</strong>
+              </p>
               <p className="info-subtext">Today</p>
             </div>
           </div>
@@ -48,11 +61,11 @@ const HomePage2 = () => {
 
         {/* Cột phải - Lịch (dịch sang phải hơn) */}
         <div className="calendar-container flex items-center justify-end col-span-1">
-          <Calendar 
-            onChange={setSelectedDate} 
-            value={selectedDate} 
+          <Calendar
+            onChange={setSelectedDate}
+            value={selectedDate}
             className="custom-calendar"
-            locale="en-US" 
+            locale="en-US"
           />
         </div>
       </div>
@@ -64,7 +77,14 @@ const HomePage2 = () => {
           <BarChart data={temperatureData}>
             <XAxis dataKey="day" />
             <YAxis />
-            <Tooltip cursor={{ fill: "transparent" }} contentStyle={{ backgroundColor: "white", border: "1px solid #ddd", borderRadius: "5px" }} />
+            <Tooltip
+              cursor={{ fill: "transparent" }}
+              contentStyle={{
+                backgroundColor: "white",
+                border: "1px solid #ddd",
+                borderRadius: "5px",
+              }}
+            />
             <Bar dataKey="temp" fill="#F3569B" radius={[5, 5, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
