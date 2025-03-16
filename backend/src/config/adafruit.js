@@ -43,7 +43,18 @@ client.on('message', (topic, message) => {
     switch (feed) {
         case "V1":
             const V1 = new Feed(feed,"Nhiệt độ",messageFromFeed,"temperature_sensor","SENSOR",{ latitude: 10.772112, longitude: 106.657883,},"user2")
-            global.io.emit("mqttData",V1);
+            console.log(V1)
+            global.io.emit("temp",V1);
+            break;
+        case "V3":
+            const V3 = new Feed(feed,"Độ ẩm đất",messageFromFeed,"humidity_sensor","SENSOR",{ latitude: 10.772112, longitude: 106.657883,},"user2")
+            console.log(V3)
+            global.io.emit("humidity",V3);
+            break;
+        case "V4":
+            const V4 = new Feed(feed,"Ánh sáng",messageFromFeed,"light_sensor","SENSOR",{ latitude: 10.772112, longitude: 106.657883,},"user2")
+            console.log(V4)
+            global.io.emit("light",V4);
             break;
         default:
             break;
@@ -54,6 +65,7 @@ client.on('message', (topic, message) => {
 client.on('error', (err) => {
     console.error('Error:', err);
 });
+
 
 function controlButtonV10(state){
     client.publish(`${AIO_USERNAME}/feeds/V11`,state,(err)=> {
