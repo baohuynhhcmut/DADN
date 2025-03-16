@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DateFilter from '../components/DateFilter'; // Import component DateFilter
 
 const History = () => {
     const data = [
@@ -37,8 +38,6 @@ const History = () => {
             <style>
                 {`
                     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
-                    
 
                     .container {
                         width: 100%;
@@ -233,19 +232,13 @@ const History = () => {
                     </select>
                 </div>
 
-                <div className="date-filter">
-                    <input
-                        type="date"
-                        value={startDate}
-                        onChange={(e) => setStartDate(e.target.value)}
-                    />
-                    <span>to</span>
-                    <input
-                        type="date"
-                        value={endDate}
-                        onChange={(e) => setEndDate(e.target.value)}
-                    />
-                </div>
+                {/* Sử dụng component DateFilter */}
+                <DateFilter
+                    startDate={startDate}
+                    endDate={endDate}
+                    onStartDateChange={setStartDate}
+                    onEndDateChange={setEndDate}
+                />
             </div>
 
             <h1 className="title">DEVICE ACTIVITY HISTORY</h1>
