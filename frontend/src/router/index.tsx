@@ -3,6 +3,7 @@ import Login from "../pages/Login/Login";
 import Home from "../pages/Home/Home";
 import Devices from "../pages/Devices";
 import HomePage2 from "../pages/HomePage/HomePage2";
+import Messages from "../pages/Messages/Messages";
 import LayoutUser from "../layout/user";
 import Profile from "../pages/Profile";
 
@@ -28,9 +29,13 @@ export const router = createBrowserRouter([
         element: <Profile />
       },
       {
-        path: 'home2',
-        element: <HomePage2 /> 
-      }
+        path: "home2",
+        element: <HomePage2 />,
+      },
+      {
+        path: "messages",
+        element: <Messages />,
+      },
     ],
   },
 ]);
