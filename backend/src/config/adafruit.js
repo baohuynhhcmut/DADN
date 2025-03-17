@@ -63,8 +63,9 @@ function controlButtonV10(state){
     })
 }
 
-// setTimeout(() => controlButtonV10("1"), 5000);
-// setTimeout(() => controlButtonV10("0"), 10000);
+
+setTimeout(() => controlButtonV10("1"), 5000);
+setTimeout(() => controlButtonV10("0"), 10000);
 
 module.exports = {
     client,

@@ -16,9 +16,9 @@ const HomePage2 = () => {
   }));
 
   return (
-    <div className="bg-[#FEF4FF] h-screen flex flex-col items-center justify-between p-4">
+    <div className="bg-[#FEF4FF] h-screen flex flex-col items-center justify-between">
       {/* Hàng chứa thông tin và lịch */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl w-full h-1/2">
+      <div className="grid grid-cols-1 md:grid-cols-4 max-w-6xl w-full ">
         {/* Cột trái - Các thẻ thông tin */}
         <div className="flex flex-col gap-4 col-span-3">
           <div className="info-card gray">
@@ -58,7 +58,7 @@ const HomePage2 = () => {
       </div>
 
       {/* Biểu đồ nhiệt độ */}
-      <div className="chart-container max-w-6xl w-full h-1/2 mt-8">
+      <div className="chart-container max-w-6xl w-full h-1/2">
         <h3 className="chart-title">Temperature</h3>
         <ResponsiveContainer width="100%" height="90%">
           <BarChart data={temperatureData}>

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import socket from '@/services/socket';
 
 // Styled components
 const Container = styled.div`
@@ -160,12 +161,23 @@ const Devices = () => {
 
   const deviceTypes = ["All", "Led", "Watering"];
 
+
+  useEffect(() => {
+    if (!socket.connected) {
+      socket.connect();
+    }
+  },[])
+
+
+
+
   const [devices, setDevices] = useState([
     { name: 'Led 1', lastUsed: 'Right now', status: 'On', timer: 'Not set', brand: 'Phillips', type: 'Led', isOn: true, value: 0, timerSet: false, turnOffTime: null, automatic: false },
     { name: 'Led 2', lastUsed: 'Right now', status: 'On', timer: 'Not set', brand: 'Xiaomi', type: 'Led', isOn: true, value: 0, timerSet: false, turnOffTime: null, automatic: false },
     { name: 'Irrigation system', lastUsed: '14:42 February 24, 2025', status: 'Off', timer: 'Not set', brand: 'Xiaomi', type: 'Watering', isOn: false, value: 0, timerSet: false, turnOffTime: null, automatic: false },
     { name: 'Sprinkler system', lastUsed: '14:55 February 24, 2025', status: 'Off', timer: 'Not set', brand: 'Rain Bird', type: 'Watering', isOn: false, value: 0, timerSet: false, turnOffTime: null, automatic: false },
   ]);
+
 
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedType, setSelectedType] = useState('All');
@@ -193,6 +205,7 @@ const Devices = () => {
   const handleTurnOffTimeChange = (index, value) => {
     const updatedDevices = [...devices];
     updatedDevices[index].turnOffTime = value;
+    
     setDevices(updatedDevices);
   };
 

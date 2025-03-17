@@ -48,6 +48,7 @@ const Home = () => {
       socket.off("humidity", handleHumidity);
       socket.off("light", handleLight);
     };
+    
   }, []);
 
 
