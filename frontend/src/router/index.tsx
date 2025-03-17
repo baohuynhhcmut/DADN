@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import Devices from "../pages/Devices";
 import HomePage2 from "../pages/HomePage/HomePage2";
 import Messages from "../pages/Messages/Messages";
+import History from "../pages/History";
 import LayoutUser from "../layout/user";
 import Profile from "../pages/Profile";
 
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
         path: "messages",
         element: <Messages />,
       },
+      {
+        path: 'history',
+        element: <History/>
+      }
     ],
   },
 ]);
