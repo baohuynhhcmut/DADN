@@ -1,5 +1,5 @@
 import { useState } from "react";
-import background from "../../assets/background.jpg"; // Import ảnh nền
+import background from "../../assets/backgr1.jpeg"; // Import ảnh nền
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
