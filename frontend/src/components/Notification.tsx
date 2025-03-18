@@ -75,6 +75,7 @@ const styles = `
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-left: 10px;
     }
 
     .notification .close-button:hover {

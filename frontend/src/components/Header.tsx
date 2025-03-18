@@ -42,6 +42,7 @@ const Header: React.FC = () => {
 };
 
 const styles = {
+  
     header: {
         display: "flex",
         justifyContent: "space-between",
@@ -80,14 +81,18 @@ const styles = {
     userInfo: {
         display: "flex",
         flexDirection: "column" as "column",
+        fontFamily: "'Poppins', sans-serif",
     },
     username: {
         fontSize: "16px",
         fontWeight: "bold",
+        fontFamily: "'Poppins', sans-serif",
+        
     },
     userLabel: {
         fontSize: "12px",
         color: "#808191",
+        
     },
 };
 
