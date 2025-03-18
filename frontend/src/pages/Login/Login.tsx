@@ -1,8 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import background from "../../assets/backgr1.jpeg"; // Import ảnh nền
-
+import Home from "../Home/Home"
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const navigate = useNavigate(); // Sử dụng useNavigate
+
+  const handleContinue = () => {
+    navigate('/'); // Chuyển hướng đến trang Home
+  };
 
   return (
     <div
@@ -59,7 +65,11 @@ const Login = () => {
                   Forgot Password?
                 </a>
               </div>
-              <button className="w-full bg-pink-500 text-white py-2 rounded-lg font-bold hover:bg-pink-600 transition duration-300">
+              <button
+                type="button" // Thêm type="button" để ngăn form submit
+                className="w-full bg-pink-500 text-white py-2 rounded-lg font-bold hover:bg-pink-600 transition duration-300"
+                onClick={handleContinue} // Gọi hàm handleContinue khi nhấn nút
+              >
                 CONTINUE
               </button>
             </form>
@@ -127,7 +137,11 @@ const Login = () => {
                 />
                 <i className="fas fa-eye absolute right-3 top-10 text-gray-500"></i>
               </div>
-              <button className="w-full bg-pink-500 text-white py-2 rounded-lg font-bold hover:bg-pink-600 transition duration-300">
+              <button
+                type="button" // Thêm type="button" để ngăn form submit
+                className="w-full bg-pink-500 text-white py-2 rounded-lg font-bold hover:bg-pink-600 transition duration-300"
+                onClick={handleContinue} // Gọi hàm handleContinue khi nhấn nút
+              >
                 SIGN UP
               </button>
             </form>
