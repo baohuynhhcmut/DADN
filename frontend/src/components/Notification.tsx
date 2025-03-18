@@ -10,6 +10,7 @@ const styles = `
         right: 20px;
         z-index: 1000;
         font-family: 'Poppins', sans-serif;
+        max-width: 500px;
     }
 
     .notification {
